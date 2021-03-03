@@ -1,1 +1,37 @@
-.elevator-customize{width:100%;height:100vh;overflow:hidden;background-color:#000;background:url("./images/plain-backdrop-decorative-gray-textured.jpg") contain no-repeat}.elevator-customize .elevator{display:inline-block;width:66%;height:calc(100% - 120px)}.elevator-customize .elevator>img{display:block;height:100%;margin:auto}/*# sourceMappingURL=style.css.map */
+.elevator-customize {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+  background: url("../images/plain-backdrop-decorative-gray-textured.jpg") 0 0/contain no-repeat;
+  display: flex;
+  flex-wrap: wrap;
+}
+.elevator-customize .top {
+  width: 100%;
+  height: calc(100% - 64px);
+  flex: 0 0 100%;
+}
+.elevator-customize .bottom {
+  width: 100%;
+  height: 64px;
+  flex: 0 0 100%;
+}
+.elevator-customize .bottom .btn {
+  width: 240px;
+  background-color: #fff;
+  border: 0;
+  border-radius: 0;
+}
+.elevator-customize .elevator {
+  display: inline-block;
+  width: 66%;
+  margin-bottom: 0;
+}
+.elevator-customize .elevator > img {
+  display: block;
+  height: 100%;
+  margin: auto;
+}
+
+/*# sourceMappingURL=style.css.map */
