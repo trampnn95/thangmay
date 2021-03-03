@@ -1,0 +1,25 @@
+// Required
+@import "../frameworks/bootstrap-5.0.0-beta2/scss/functions";
+@import "../frameworks/bootstrap-5.0.0-beta2/scss/variables";
+@import "../frameworks/bootstrap-5.0.0-beta2/scss/mixins";
+
+
+.elevator-customize {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+  background: url("./images/plain-backdrop-decorative-gray-textured.jpg") contain no-repeat;
+
+  .elevator {
+    display: inline-block;
+    width: 66%;
+    height: calc(100% - 120px);
+
+    & > img {
+      display: block;
+      height: 100%;
+      margin: auto
+    }
+  }
+}
