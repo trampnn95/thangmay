@@ -30,21 +30,19 @@
   width: 100%;
   height: 100%;
   margin-bottom: 0;
-  transition: height 0.35s ease;
-}
-@media (prefers-reduced-motion: reduce) {
-  .elevator-customize .elevator {
-    transition: none;
-  }
+  margin-left: auto;
+  transition: 0.35s ease;
+  transform-origin: right bottom;
 }
 .elevator-customize .elevator > img {
   display: block;
   height: 100%;
   margin: auto;
+  transition: 0.35s ease;
+  transform-origin: right bottom;
 }
 .elevator-customize .elevator.minimum {
   width: 66%;
-  margin-left: auto;
 }
 .elevator-customize .elevator.minimum > img {
   height: 80%;
