@@ -11,6 +11,7 @@
   width: 100%;
   height: calc(100% - 64px);
   flex: 0 0 100%;
+  display: flex;
 }
 .elevator-customize .bottom {
   width: 100%;
@@ -43,6 +44,7 @@
 }
 .elevator-customize .elevator.minimum {
   width: 66%;
+  margin-left: auto;
 }
 .elevator-customize .elevator.minimum > img {
   height: 80%;
