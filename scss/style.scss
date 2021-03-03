@@ -16,7 +16,8 @@
   .top {
     width: 100%;
     height: calc(100% - 64px);
-    flex: 0 0 100%
+    flex: 0 0 100%;
+    display: flex;
   }
 
   .bottom {
@@ -48,6 +49,7 @@
 
     &.minimum {
       width: 66%;
+      margin-left: auto;
 
       & > img {
         height: 80%;
