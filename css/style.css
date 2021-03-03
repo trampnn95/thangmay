@@ -33,6 +33,7 @@
   margin-left: auto;
   transition: 0.35s ease;
   transform-origin: right bottom;
+  position: relative;
 }
 .elevator-customize .elevator > img {
   display: block;
@@ -42,12 +43,39 @@
   transition: 0.35s ease;
   transform-origin: right bottom;
 }
+.elevator-customize .elevator > .spot {
+  width: 48px;
+  height: 48px;
+  padding: 4px;
+  border: 3px solid #fff;
+  border-radius: 100%;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  animation: neonGlow 2s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.elevator-customize .elevator > .spot::before {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 100%;
+  animation: neonGlow 2s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
 .elevator-customize .elevator.minimum {
   width: 66%;
 }
 .elevator-customize .elevator.minimum > img {
   height: 80%;
   margin-top: 10%;
+}
+
+@keyframes neonGlow {
+  0% {
+    shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 22px rgba(255, 255, 255, 0.8), 0 0 40px rgba(66, 220, 219, 0.8), 0 0 60px rgba(66, 220, 219, 0.8), 0 0 80px rgba(66, 220, 219, 0.5), 0 0 100px rgba(66, 220, 219, 0.5), 0 0 140px rgba(66, 220, 219, 0.5), 0 0 200px rgba(66, 220, 219, 0.5);
+  }
+  100% {
+    shadow: 0 0 2px rgba(255, 255, 255, 0.8), 0 0 8px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(66, 220, 219, 0.8), 0 0 30px rgba(66, 220, 219, 0.8), 0 0 40px rgba(66, 220, 219, 0.8), 0 0 50px rgba(66, 220, 219, 0.5), 0 0 80px rgba(66, 220, 219, 0.5);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
