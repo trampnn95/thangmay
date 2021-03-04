@@ -3,6 +3,21 @@
 @import "../frameworks/bootstrap-5.0.0-beta2/scss/variables";
 @import "../frameworks/bootstrap-5.0.0-beta2/scss/mixins";
 
+#btnDetailHide {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  line-height: 48px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
 
 .elevator-customize {
   width: 100%;
@@ -35,26 +50,132 @@
   }
 
   .elevator {
-    display: inline-block;
+    display: flex;
     width: 100%;
     height: 100%;
     margin-bottom: 0;
-    @include transition($transition-collapse);
+    margin-left: auto;
+    transition: 0.35s ease;
+    transform-origin: right bottom;
 
-    & > img {
-      display: block;
-      height: 100%;
-      margin: auto
+    & > .image {
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+
+      // & > img {
+      //   display: block;
+      //   height: 100%;
+      //   margin: auto;
+      //   margin-top: 0;
+      //   transition: 0.35s ease;
+      //   transform: scale(1);
+      //   transform-origin: right bottom;
+      // }
+
+      // & > .spot {
+      //   width: 16px;
+      //   height: 16px;
+      //   padding: 2px;
+      //   border: 2px solid #1041FF;
+      //   border-radius: 100%;
+      //   position: absolute;
+      //   top: 271px;
+      //   left: 53px;
+      //   box-shadow: 0 0 .5vw #1041FF, 0 0 1.5vw #1041FF, 0 0 5vw #1041FF, 0 0 5vw #1041FF, 0 0 .2vw #1041FF;
+      //   transform: scale(1);
+      //   transition: 0.35s ease;
+      //   //animation: neonGlow 2s infinite alternate cubic-bezier(0.455, 0.030, 0.515, 0.955);
+  
+      //   &::before {
+      //     content: '';
+      //     width: 100%;
+      //     height: 100%;
+      //     display: block;
+      //     background-color: #1041FF;
+      //     border-radius: 100%;
+      //     box-shadow: 0 0 .5vw #1041FF, 0 0 1.5vw #1041FF, 0 0 5vw #1041FF, 0 0 5vw #1041FF, 0 0 .2vw #1041FF;
+      //     //animation: neonGlow 2s infinite alternate cubic-bezier(0.455, 0.030, 0.515, 0.955);
+      //   }
+      // }
+
+      & > svg {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+          circle {
+            transition: 0.35s ease;
+
+            &:hover {
+              filter:url(#shadow2);
+            }
+          }
+      }
     }
 
     &.minimum {
       width: 66%;
-      margin-left: auto;
 
-      & > img {
-        height: 80%;
-        margin-top: 10%;
+      & > .image {
+        & > img {
+          transform: scale(.8);
+        }
+
+        & > .spot {
+          transform: scale(.8);
+          transform-origin: center;
+          top: 328px;
+          left: 123px;
+        }
       }
     }
+  }
+}
+
+.elevator-popup {
+  display: none;
+  padding: 8px 16px;
+  background-color: white;
+  border-radius: 6px;
+  position: absolute;
+
+  // &::before {
+  //   content: "";
+  //   width: 12px;
+  //   height: 12px;
+  //   transform: rotate(45deg);
+  //   background-color: white;
+  //   position: absolute;
+  //   left: -6px;
+  //   top: calc(50% - 6px);
+  // }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+@keyframes borderNeon {
+  0%,
+  100% {
+    box-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+    border-color: #28D7FE;
+  }
+  50% {
+    box-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, .5vw .5vw .1vw #0A3940;
+    border-color: #146C80;
+  }
+}
+
+@keyframes backgroundNeon {
+  0%,
+  100% {
+    box-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+    background-color: #28D7FE;
+  }
+  50% {
+    box-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, .5vw .5vw .1vw #0A3940;
+    background-color: #146C80;
   }
 }
