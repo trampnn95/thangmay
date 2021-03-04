@@ -11,19 +11,178 @@
   <body>
     <section class="elevator-customize">
       <div class="top">
+        
         <div class="elevator minimum">
-          <div class="image">
+          <figure class="image">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080" preserveAspectRatio="xMinYMin meet" >
+              <defs>
+                <filter id="shadow2">
+                  <feDropShadow dx="0" dy="0" stdDeviation="5"
+                      flood-color="#FFFFFF"/>
+                </filter>
+              </defs>
+              
+              <image href="images/01.png" x="26%" />
+              <g id="danbangdieukhien" pointer-events="all" class="hover_group" onmouseover="popupshow(this, 'left')" onmouseout="popuphide()">
+                <a href="https://example.com/link1.html">
+                  <circle cx="610" cy="500" r="20" fill="#1041FF"/>
+                </a>
+              </g>
+              <g id="danvachtrangtri" pointer-events="all" class="hover_group" onmouseover="popupshow(this, 'left')" onmouseout="popuphide()">
+                <a xlink:href="https://example.com/link2.html">
+                  <circle cx="710" cy="350" r="20" fill="#1041FF"/>
+                </a>
+              </g>
+              <g id="danthanhomega" pointer-events="all" class="hover_group" onmouseover="popupshow(this, 'left')" onmouseout="popuphide()">
+                <a xlink:href="https://example.com/link2.html">
+                  <circle cx="710" cy="550" r="20" fill="#1041FF"/>
+                </a>
+              </g>
+              <g id="dantran" pointer-events="all" class="hover_group" onmouseover="popupshow(this, 'left')" onmouseout="popuphide()">
+                <a xlink:href="https://example.com/link2.html">
+                  <circle cx="910" cy="230" r="20" fill="#1041FF"/>
+                </a>
+              </g>
+              <g id="dansan" pointer-events="all" class="hover_group" onmouseover="popupshow(this, 'left')" onmouseout="popuphide()">
+                <a xlink:href="https://example.com/link2.html">
+                  <circle cx="910" cy="910" r="20" fill="#1041FF"/>
+                </a>
+              </g>
+              <g id="khetrangtri" pointer-events="all" class="hover_group" onmouseover="popupshow(this, 'left')" onmouseout="popuphide()">
+                <a xlink:href="https://example.com/link2.html">
+                  <circle cx="815" cy="880" r="20" fill="#1041FF"/>
+                </a>
+              </g>
+              <g id="dankinh" pointer-events="all" class="hover_group" onmouseover="popupshow(this, 'left')" onmouseout="popuphide()">
+                <a xlink:href="https://example.com/link2.html">
+                  <circle cx="1050" cy="550" r="20" fill="#1041FF"/>
+                </a>
+              </g>
+            </svg>
+          </figure>
+
+          <!-- <div class="image">
             <img src="images/01.png">
             <div class="spot"></div>
           </div>
+
+          <div class="image">
+            <img src="images/01.png" usemap="#image-map">
+            <map name="image-map">
+              <area target="" alt="" title="" href="#" coords="110,504,20" shape="circle" fill="#1041FF">
+              <area target="" alt="" title="" href="#" coords="193,336,15" shape="circle" fill="#1041FF">
+              <area target="" alt="" title="" href="#" coords="218,528,14" shape="circle" fill="#1041FF">
+              <area target="" alt="" title="" href="#" coords="314,876,12" shape="circle" fill="#1041FF">
+              <area target="" alt="" title="" href="#" coords="546,481,13" shape="circle" fill="#1041FF">
+              <area target="" alt="" title="" href="#" coords="423,916,11" shape="circle" fill="#1041FF">
+              <area target="" alt="" title="" href="#" coords="399,236,11" shape="circle" fill="#1041FF">
+            </map>
+          </div> -->
         </div>
       </div>
       
       <div class="bottom">
-        <button type="button" class="btn">Technical Detail</button>
+        <button type="button" id="btnDetail" class="btn">Technical Detail</button>
       </div>
     </section>
+    
+    <button type="button" id="btnDetailHide" class="btn">x</button>
 
+    <div class="">
+      <div id="danvachtrangtri-popup" class="elevator-popup">
+        <p>Dán vách trang trí</p>
+      </div>
+
+      <div id="danbangdieukhien-popup" class="elevator-popup">
+        <p>Dán bảng điều khiển</p>
+      </div>
+
+      <div id="danthanhomega-popup" class="elevator-popup">
+        <p>Dán thanh Omega, gân tăng cứng</p>
+      </div>
+
+      <div id="khetrangtri-popup" class="elevator-popup">
+        <p>Trám trét góc, khe trang trí</p>
+      </div>
+
+      <div id="dantran-popup" class="elevator-popup">
+        <p>Dán trần</p>
+      </div>
+
+      <div id="dansan-popup" class="elevator-popup">
+        <p>Dán sàn</p>
+      </div>
+
+      <div id="dankinh-popup" class="elevator-popup">
+        <p>Dán kính</p>
+      </div>
+    </div>
+
+    <script src="frameworks/jquery-3.6.0/jquery-3.6.0.min.js"></script>
     <script src="frameworks/bootstrap-5.0.0-beta2-dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      function popupshow(element, placement) {
+        let iconPos = $(element)[0].getBoundingClientRect();
+        let $popup = $('#' + $(element).attr('id') + '-popup');
+        // console.log(popup)
+        // popup.style.left = (iconPos.right + 20) + "px";
+        // popup.style.top = (window.scrollY + iconPos.top - 60) + "px";
+        // popup.style.display = "block";
+        if (placement == 'left') {
+          $popup.css({
+            left: (iconPos.left + 20) + "px",
+            top: (window.scrollY + iconPos.top - 10) + "px",
+            display: 'block'
+          })
+        }
+
+        if (placement == 'right') {
+          $popup.css({
+            left: (iconPos.right + 20) + "px",
+            top: (window.scrollY + iconPos.top - 10) + "px",
+            display: 'block'
+          })
+        }
+        
+      }
+
+      function popuphide(element) {
+        $('.elevator-popup').css('display', 'none')
+      }
+
+      $(function() {
+        $('#btnDetailHide').hide()
+
+        $('#btnDetail').click(function(){
+          $('.elevator').removeClass('minimum');
+          $(this).hide()
+          $('#btnDetailHide').show()
+        })
+
+        $('#btnDetailHide').click(function(){
+          $('.elevator').addClass('minimum');
+          $(this).hide()
+          $('#btnDetail').show()
+        })
+
+        // var myicon = document.getElementById("myicon");
+        // var mypopup = document.getElementById("mypopup");
+
+        // myicon.addEventListener("mouseover", showPopup);
+        // myicon.addEventListener("mouseout", hidePopup);
+
+        // function showPopup(evt) {
+        //   var iconPos = myicon.getBoundingClientRect();
+        //   mypopup.style.left = (iconPos.right + 20) + "px";
+        //   mypopup.style.top = (window.scrollY + iconPos.top - 60) + "px";
+        //   mypopup.style.display = "block";
+        // }
+
+        // function hidePopup(evt) {
+        //   mypopup.style.display = "none";
+        // }
+      });
+    </script>
   </body>
 </html>
