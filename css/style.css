@@ -56,9 +56,11 @@
   position: relative;
 }
 .elevator-customize .elevator > .image > svg {
+  height: 100%;
   position: absolute;
   bottom: 0;
   right: 0;
+  transition: 0.35s ease;
 }
 .elevator-customize .elevator > .image > svg circle {
   transition: 0.35s ease;
@@ -68,6 +70,9 @@
 }
 .elevator-customize .elevator.minimum {
   width: 66%;
+}
+.elevator-customize .elevator.minimum > .image > svg {
+  height: 80%;
 }
 .elevator-customize .elevator.minimum > .image > img {
   transform: scale(0.8);
